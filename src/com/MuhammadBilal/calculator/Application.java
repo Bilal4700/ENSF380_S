@@ -172,7 +172,12 @@ public class Application {
     		System.out.println("Numbers of item selected cant be greater than number of values.");
     		return 0;
     		}
-    	return a * permutation( a-1, b-1);
+        int result = 1;
+        for (int i = 0; i < b; i++) {
+            result *= (a - i);
+        }
+
+        return result;
     	
     }
 }
