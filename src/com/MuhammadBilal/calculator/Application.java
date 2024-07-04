@@ -7,7 +7,7 @@ public class Application {
 	    Scanner scanner = new Scanner(System.in);
 	    
 	    while (true) {
-	        System.out.println("\nEnter operation (add, subtract, multiply, divide, pow, sqrt, log, log10, sin, cos, tan, factorial) or 'exit' to quit:");
+	        System.out.println("\nEnter operation (add, subtract, multiply, divide, pow, sqrt, log, log10, sin, cos, tan, factorial, permutation) or 'exit' to quit:");
 	        String operation = scanner.next();
 	        
 	        if (operation.equalsIgnoreCase("exit")) {
@@ -21,7 +21,8 @@ public class Application {
 	            double num1 = scanner.nextDouble();
 	            System.out.print("Enter second number: ");
 	            double num2 = scanner.nextDouble();
-
+	            int v1 = (int) num1;
+	            int v2 = (int) num2;
 	            switch (operation.toLowerCase()) {
 	                case "add":
 	                    System.out.println("Result: " + add(num1, num2));
@@ -38,6 +39,9 @@ public class Application {
 	                case "pow":
 	                    System.out.println("Result: " + power(num1, num2));
 	                    break;
+	                case "permutation":
+	                	System.out.println("Result: " + permutation(v1 , v2));
+	                	break;
 	                default:
 	                    System.out.println("Invalid operation.");
 	                    break;
@@ -150,6 +154,26 @@ public class Application {
     public static double tan(double angleDegrees) {
         double angleRadians = Math.toRadians(angleDegrees);
         return Math.tan(angleRadians);
+    }
+    
+    public static long permutation (int a , int b) {
+    	if ( b == 0) {
+    		return 1;
+    	}
+    	else if (a > 100){
+    		System.out.println("Number of values can't be greater than hundred.");
+    		return 0;
+    	}
+    	else if(a < 0) {
+    		System.out.println("Number of values cant be less than 0.");
+    		return 0;
+    	}
+    	else if (a < b) {
+    		System.out.println("Numbers of item selected cant be greater than number of values.");
+    		return 0;
+    		}
+    	return a * permutation( a-1, b-1);
+    	
     }
 }
 
