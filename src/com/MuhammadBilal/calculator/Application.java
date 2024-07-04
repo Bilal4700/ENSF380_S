@@ -58,7 +58,7 @@ public class Application {
         scanner.close();
     }
 
-    // Other Methods' placeholders
+
     public static double add(double a, double b) {
         return a + b;
     }
