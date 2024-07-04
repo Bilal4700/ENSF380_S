@@ -97,7 +97,7 @@ public class Application {
     }
 
     private static long factorialHelper(int originalNum, int num) {
-        if (num <= 1) {
+        if (num < 1) {
             return 1;
         }
         // Calculate progress and update progress bar
